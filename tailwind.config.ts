@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				novae: {
-					blue: "#0f172a",
-					teal: "#06b6d4",
-					gray: "#64748b",
+					blue: "#36277b", // Changed to dark purple
+					teal: "#a32f6a", // Changed to maroon
+					gray: "#7E69AB", // Changed to secondary purple
 					light: "#f8fafc"
 				}
 			},

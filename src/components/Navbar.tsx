@@ -44,50 +44,62 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
+        <div className={`flex items-center ${isScrolled ? 'justify-center' : 'justify-between'}`}>
+          {/* Logo - with animation when scrolled */}
           <Link 
             to="/" 
-            className="text-2xl font-bold text-novae-blue flex items-center"
+            className={`text-2xl font-bold text-novae-blue flex items-center transition-all duration-500 ${
+              isScrolled ? 'transform scale-90' : ''
+            }`}
           >
-            <span className="text-novae-teal mr-1">N</span>ovae
+            {isScrolled ? (
+              <span className="text-novae-teal animate-fade-in">N</span>
+            ) : (
+              <>
+                <span className="text-novae-teal mr-1">N</span>ovae
+              </>
+            )}
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+          {/* Desktop Navigation - only visible when not scrolled */}
+          {!isScrolled && (
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`link-underline font-medium transition-colors ${
+                    location.pathname === link.path
+                      ? 'text-novae-teal'
+                      : 'text-novae-blue hover:text-novae-teal'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
               <Link
-                key={link.name}
-                to={link.path}
-                className={`link-underline font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-novae-teal'
-                    : 'text-novae-blue hover:text-novae-teal'
-                }`}
+                to="/contact"
+                className="px-5 py-2 bg-novae-teal text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg"
               >
-                {link.name}
+                Get in Touch
               </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="px-5 py-2 bg-novae-teal text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg"
-            >
-              Get in Touch
-            </Link>
-          </div>
+            </div>
+          )}
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-novae-blue focus:outline-none"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button - only visible when not scrolled on mobile */}
+          {!isScrolled && (
+            <button
+              className="md:hidden text-novae-blue focus:outline-none"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
+      {/* Mobile Menu - only when menu is open and not scrolled */}
+      {isMobileMenuOpen && !isScrolled && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-4 animate-fade-in">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (

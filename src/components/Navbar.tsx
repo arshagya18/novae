@@ -44,7 +44,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className={`flex items-center ${isScrolled ? 'justify-center' : 'justify-between'}`}>
+        <div className="flex items-center justify-between">
           {/* Logo - with animation when scrolled */}
           <Link 
             to="/" 
@@ -61,45 +61,41 @@ export const Navbar = () => {
             )}
           </Link>
 
-          {/* Desktop Navigation - only visible when not scrolled */}
-          {!isScrolled && (
-            <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`link-underline font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'text-novae-teal'
-                      : 'text-novae-blue hover:text-novae-teal'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+          {/* Desktop Navigation - always visible */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
               <Link
-                to="/contact"
-                className="px-5 py-2 bg-novae-teal text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg"
+                key={link.name}
+                to={link.path}
+                className={`link-underline font-medium transition-colors ${
+                  location.pathname === link.path
+                    ? 'text-novae-teal'
+                    : 'text-novae-blue hover:text-novae-teal'
+                }`}
               >
-                Get in Touch
+                {link.name}
               </Link>
-            </div>
-          )}
-
-          {/* Mobile Menu Button - only visible when not scrolled on mobile */}
-          {!isScrolled && (
-            <button
-              className="md:hidden text-novae-blue focus:outline-none"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            ))}
+            <Link
+              to="/contact"
+              className="px-5 py-2 bg-novae-teal text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          )}
+              Get in Touch
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-novae-blue focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu - only when menu is open and not scrolled */}
-      {isMobileMenuOpen && !isScrolled && (
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-4 animate-fade-in">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (

@@ -67,7 +67,7 @@ export default {
 					purple: "#6B46C1", // Dark purple
 					blue: "#3F83F8", // Light blue
 					teal: "#0D9488", // Teal
-					green: "#10B981", // Green
+					green: "#00C48C", // Added green color
 					light: "#f8fafc",
 					gradient: {
 						from: "#6B46C1", // Purple from logo

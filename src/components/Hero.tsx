@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center bg-novae-blue overflow-hidden">
+    <div className="relative min-h-screen flex items-center bg-gradient-to-r from-novae-purple to-novae-green overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-white/[0.2] [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" />
@@ -51,17 +51,17 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image or Illustration */}
+          {/* Image replaced with animated GIF */}
           <div className={`flex justify-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
             <div className="relative w-full max-w-md lg:max-w-full aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-black/60 backdrop-blur-sm">
                 <img 
-                  src="/lovable-uploads/34ddcf2b-3456-43e1-a7d3-fdc2f3f325ee.png" 
-                  alt="Taxi with LED advertising display in a city" 
+                  src="/taxi-ad-animation.gif" 
+                  alt="Animated taxi with LED advertising display in a city" 
                   className="w-full h-full object-cover mix-blend-overlay"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-novae-blue/80 via-transparent to-novae-teal/40"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-novae-purple/80 via-transparent to-novae-green/40"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg animate-float">
                   <h3 className="text-white text-xl font-bold">Smart Screens, Smarter Data</h3>

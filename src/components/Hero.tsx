@@ -26,13 +26,13 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className={`space-y-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="inline-block bg-novae-teal/10 border border-novae-teal/20 backdrop-blur-sm rounded-full px-4 py-1 text-novae-teal text-sm font-medium">
+            <div className="inline-block bg-novae-teal/10 border border-novae-teal/20 backdrop-blur-sm rounded-full px-4 py-1 text-white text-sm font-medium">
               GPS-Enabled Taxi-Top Advertising
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Revolutionize Your <span className="text-novae-teal">Brand Reach</span> with Smart Advertising
+              Revolutionize Your <span className="text-white">Brand Reach</span> with Smart Advertising
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-xl">
+            <p className="text-lg md:text-xl text-white max-w-xl">
               Target your audience in real time with interactive taxi-top ads. Dynamic content that connects with customers when and where it matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

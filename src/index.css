@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,16 +17,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 260 37% 32%; /* Updated to dark purple */
+    --primary: 262 54% 52%; /* Updated to purple */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 340 55% 41%; /* Updated to maroon */
+    --secondary: 199 89% 48%; /* Updated to blue */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 340 55% 41%; /* Updated to maroon */
+    --accent: 160 84% 39%; /* Updated to teal */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -57,16 +58,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 260 37% 50%; /* Updated to light purple */
+    --primary: 262 54% 65%; /* Updated to brighter purple */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 340 65% 50%; /* Updated to brighter maroon */
+    --secondary: 199 89% 60%; /* Updated to brighter blue */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 340 65% 50%; /* Updated to brighter maroon */
+    --accent: 160 84% 50%; /* Updated to brighter teal */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -147,4 +148,15 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+  
+  .bg-grid-white {
+    background-size: 20px 20px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
 }

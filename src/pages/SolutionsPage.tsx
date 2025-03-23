@@ -23,7 +23,7 @@ const SolutionsPage = () => {
         'Route optimization for maximum visibility along high-traffic corridors',
         'Dynamic content adaptation based on location context'
       ],
-      color: 'from-blue-500 to-indigo-600'
+      color: 'from-novae-purple to-novae-blue'
     },
     {
       id: 'dynamic',
@@ -36,7 +36,7 @@ const SolutionsPage = () => {
         'Weather-triggered content variations',
         'Integration with live data feeds for contextual relevance'
       ],
-      color: 'from-teal-500 to-green-500'
+      color: 'from-novae-blue to-novae-teal'
     },
     {
       id: 'mobile',
@@ -49,7 +49,7 @@ const SolutionsPage = () => {
         'Mobile app deep linking capabilities',
         'Audience retargeting across digital channels'
       ],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-novae-teal to-novae-green'
     },
     {
       id: 'analytics',
@@ -62,7 +62,7 @@ const SolutionsPage = () => {
         'Conversion attribution modeling',
         'Competitive benchmark reporting'
       ],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-novae-purple to-novae-teal'
     }
   ];
 
@@ -71,7 +71,7 @@ const SolutionsPage = () => {
       <Navbar />
       <main className="flex-grow pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 bg-novae-blue">
+        <section className="relative py-20 bg-gradient-to-r from-novae-purple via-novae-blue to-novae-teal">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center text-white">
               <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1 text-sm font-medium mb-6">
@@ -108,13 +108,13 @@ const SolutionsPage = () => {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <div className="bg-novae-teal/10 text-novae-teal text-sm font-medium px-4 py-1 rounded-full inline-block mb-4">
+              <div className="bg-novae-purple/10 text-novae-purple text-sm font-medium px-4 py-1 rounded-full inline-block mb-4">
                 Our Technology
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-novae-blue mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-novae-purple mb-6">
                 Comprehensive Advertising Solutions
               </h2>
-              <p className="text-novae-gray text-lg">
+              <p className="text-gray-600 text-lg">
                 Our platform combines hardware, software, and analytics to deliver a complete
                 solution for modern outdoor advertising campaigns.
               </p>
@@ -130,17 +130,17 @@ const SolutionsPage = () => {
                       <div className={`inline-block bg-gradient-to-br ${solution.color} p-3 rounded-lg mb-6`}>
                         {solution.icon}
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-novae-blue mb-4">
+                      <h3 className="text-2xl md:text-3xl font-bold text-novae-purple mb-4">
                         {solution.title}
                       </h3>
-                      <p className="text-novae-gray text-lg mb-6">
+                      <p className="text-gray-600 text-lg mb-6">
                         {solution.description}
                       </p>
                       <ul className="space-y-3">
                         {solution.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start">
                             <CheckCircle2 className="h-6 w-6 text-novae-teal flex-shrink-0 mr-3 mt-0.5" />
-                            <span className="text-novae-gray">{feature}</span>
+                            <span className="text-gray-600">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -153,7 +153,7 @@ const SolutionsPage = () => {
                             {/* This would be an image in production */}
                             <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
                               <div className="text-center p-6">
-                                <h3 className="text-xl font-bold text-novae-blue mb-3">{solution.title}</h3>
+                                <h3 className="text-xl font-bold text-novae-purple mb-3">{solution.title}</h3>
                                 <div className={`w-20 h-20 mx-auto bg-gradient-to-br ${solution.color} rounded-full grid place-items-center`}>
                                   {solution.icon}
                                 </div>
@@ -173,7 +173,7 @@ const SolutionsPage = () => {
         {/* CTA Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-novae-blue to-novae-blue/80 rounded-2xl shadow-xl overflow-hidden">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-novae-purple to-novae-teal rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8 md:p-12 text-white relative">
                 <div className="max-w-3xl relative z-10">
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -185,7 +185,7 @@ const SolutionsPage = () => {
                   </p>
                   <Link 
                     to="/contact" 
-                    className="inline-flex items-center bg-white text-novae-blue px-6 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors"
+                    className="inline-flex items-center bg-white text-novae-purple px-6 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors"
                   >
                     Get Started Today <ChevronRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -193,7 +193,7 @@ const SolutionsPage = () => {
                 
                 {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-novae-teal/10 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
               </div>
             </div>
           </div>

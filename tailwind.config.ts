@@ -64,10 +64,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				novae: {
-					blue: "#36277b", // Changed to dark purple
-					teal: "#a32f6a", // Changed to maroon
-					gray: "#7E69AB", // Changed to secondary purple
-					light: "#f8fafc"
+					purple: "#6B46C1", // Dark purple
+					blue: "#3F83F8", // Light blue
+					teal: "#0D9488", // Teal
+					green: "#10B981", // Green
+					light: "#f8fafc",
+					gradient: {
+						from: "#6B46C1", // Purple from logo
+						mid: "#3F83F8", // Blue from middle of logo
+						to: "#10B981", // Green from end of logo
+					}
 				}
 			},
 			fontFamily: {
@@ -162,7 +168,11 @@ export default {
 				'scale-in': 'scale-in 0.4s ease-out forwards',
 				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				'float': 'float 6s ease-in-out infinite'
-			}
+			},
+			backgroundImage: {
+				'gradient-primary': 'linear-gradient(90deg, var(--tw-gradient-stops))',
+				'main-gradient': 'linear-gradient(90deg, #6B46C1, #3F83F8, #10B981)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

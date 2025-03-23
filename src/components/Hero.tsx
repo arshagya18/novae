@@ -56,7 +56,7 @@ const Hero = () => {
             <div className="relative w-full max-w-md lg:max-w-full aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-black/60 backdrop-blur-sm">
                 <img
-                  src="/taxi-ad-animation1.gif"
+                  src="/Taxi.gif"
                   alt="Animated taxi with LED advertising display in a city"
                   className="w-full h-full object-cover mix-blend-overlay"
                 />

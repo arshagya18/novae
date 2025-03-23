@@ -36,14 +36,14 @@ const Hero = () => {
               Target your audience in real time with interactive taxi-top ads. Dynamic content that connects with customers when and where it matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link 
-                to="/solutions" 
+              <Link
+                to="/solutions"
                 className="px-6 py-3 bg-novae-teal text-white rounded-md font-medium flex items-center justify-center hover:shadow-lg transition-all hover:scale-105"
               >
                 Explore Solutions <ChevronRight className="ml-2 h-4 w-4" />
               </Link>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-md font-medium border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
               >
                 Get in Touch
@@ -55,9 +55,9 @@ const Hero = () => {
           <div className={`flex justify-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
             <div className="relative w-full max-w-md lg:max-w-full aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-black/60 backdrop-blur-sm">
-                <img 
-                  src="/taxi-ad-animation.gif" 
-                  alt="Animated taxi with LED advertising display in a city" 
+                <img
+                  src="/taxi-ad-animation1.gif"
+                  alt="Animated taxi with LED advertising display in a city"
                   className="w-full h-full object-cover mix-blend-overlay"
                 />
               </div>
@@ -75,9 +75,9 @@ const Hero = () => {
 
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 w-full">
-        <svg 
-          className="w-full h-24 text-white fill-current" 
-          viewBox="0 0 1440 74" 
+        <svg
+          className="w-full h-24 text-white fill-current"
+          viewBox="0 0 1440 74"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1440,42.7L1440,74L0,74Z" />

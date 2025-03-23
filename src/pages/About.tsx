@@ -43,22 +43,22 @@ const About = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">About Novae</h1>
               <p className="text-xl text-white/80">
-                Revolutionizing outdoor advertising with location-based, 
+                Revolutionizing outdoor advertising with location-based,
                 data-driven digital displays on the move.
               </p>
             </div>
           </div>
-          
+
           {/* Background decoration */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute w-full h-full bg-grid-white [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" />
           </div>
-          
+
           {/* Bottom wave */}
           <div className="absolute bottom-0 left-0 w-full">
-            <svg 
-              className="w-full h-24 text-white fill-current" 
-              viewBox="0 0 1440 74" 
+            <svg
+              className="w-full h-24 text-white fill-current"
+              viewBox="0 0 1440 74"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1440,42.7L1440,74L0,74Z" />
@@ -77,12 +77,12 @@ const About = () => {
                   precision, flexibility, and measurability that modern marketers demand.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Founded in 2023, we set out to transform the industry by developing GPS-enabled 
-                  LED displays for taxis that could deliver the right message, to the right audience, 
+                  Founded in 2023, we set out to transform the industry by developing GPS-enabled
+                  LED displays for taxis that could deliver the right message, to the right audience,
                   at the right time and place.
                 </p>
                 <p className="text-gray-600">
-                  Today, we're proud to be at the forefront of dynamic outdoor advertising, 
+                  Today, we're proud to be at the forefront of dynamic outdoor advertising,
                   helping brands connect with their audiences in meaningful, measurable ways.
                 </p>
               </div>
@@ -90,12 +90,12 @@ const About = () => {
                 <div className="bg-white p-8 rounded-xl shadow-lg">
                   <h3 className="text-2xl font-bold text-novae-blue mb-4">Our Mission</h3>
                   <p className="text-gray-600 mb-6">
-                    To empower brands with innovative, location-intelligent advertising solutions 
+                    To empower brands with innovative, location-intelligent advertising solutions
                     that create meaningful connections with audiences on the move.
                   </p>
                   <h3 className="text-2xl font-bold text-novae-teal mb-4">Our Vision</h3>
                   <p className="text-gray-600">
-                    To become the global leader in smart, sustainable outdoor advertising that 
+                    To become the global leader in smart, sustainable outdoor advertising that
                     enhances urban environments while delivering exceptional results for advertisers.
                   </p>
                 </div>
@@ -111,11 +111,11 @@ const About = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-novae-purple mb-4">Our Values</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                These core principles guide everything we do at Novae, from product development 
+                These core principles guide everything we do at Novae, from product development
                 to customer relationships.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value) => (
                 <div key={value.name} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
@@ -145,27 +145,27 @@ const About = () => {
                 <div className="w-24 h-24 bg-gradient-to-r from-novae-purple/20 to-novae-teal/20 rounded-full mx-auto mb-4 overflow-hidden flex items-center justify-center">
                   <div className="text-2xl font-bold text-novae-purple group-hover:scale-110 transition-transform">JD</div>
                 </div>
-                <h3 className="text-xl font-bold text-novae-purple">John Doe</h3>
+                <h3 className="text-xl font-bold text-novae-purple">Devi Katiyar</h3>
                 <p className="text-novae-blue mb-2">CEO & Founder</p>
-                <p className="text-gray-600">Visionary leader with 15+ years in advertising technology.</p>
+
               </div>
-              
+
               <div className="bg-gray-50 p-6 rounded-lg shadow-sm text-center group hover:shadow-md transition-all">
                 <div className="w-24 h-24 bg-gradient-to-r from-novae-purple/20 to-novae-teal/20 rounded-full mx-auto mb-4 overflow-hidden flex items-center justify-center">
                   <div className="text-2xl font-bold text-novae-blue group-hover:scale-110 transition-transform">JS</div>
                 </div>
-                <h3 className="text-xl font-bold text-novae-purple">Jane Smith</h3>
+                <h3 className="text-xl font-bold text-novae-purple">Devi Katiyar</h3>
                 <p className="text-novae-blue mb-2">CTO</p>
-                <p className="text-gray-600">Engineering expert specializing in GPS and LED technologies.</p>
+
               </div>
-              
+
               <div className="bg-gray-50 p-6 rounded-lg shadow-sm text-center group hover:shadow-md transition-all">
                 <div className="w-24 h-24 bg-gradient-to-r from-novae-purple/20 to-novae-teal/20 rounded-full mx-auto mb-4 overflow-hidden flex items-center justify-center">
                   <div className="text-2xl font-bold text-novae-teal group-hover:scale-110 transition-transform">DW</div>
                 </div>
-                <h3 className="text-xl font-bold text-novae-purple">David Wilson</h3>
+                <h3 className="text-xl font-bold text-novae-purple">Devi Katiyar</h3>
                 <p className="text-novae-blue mb-2">Head of Partnerships</p>
-                <p className="text-gray-600">Building strategic relationships with transportation companies.</p>
+
               </div>
             </div>
           </div>

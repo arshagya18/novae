@@ -64,7 +64,7 @@ export default {
 				},
 				novae: {
 					purple: "#6C5DD3", // Updated to match requested purple
-					blue: "#3F83F8", // Light blue
+					blue: "#6C5DD3", // Light blue
 					teal: "#0D9488", // Teal
 					green: "#00C48C", // Green
 					light: "#f8fafc",

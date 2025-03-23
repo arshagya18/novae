@@ -83,7 +83,7 @@ const Stats = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-r from-novae-blue to-novae-blue/90 relative overflow-hidden"
+      className="py-20 bg-gradient-to-r from-novae-purple to-novae-green relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">

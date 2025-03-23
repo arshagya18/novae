@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 const SolutionsHero = () => {
   return (
-    <section className="relative py-20 bg-gradient-to-r from-novae-purple via-novae-blue to-novae-teal">
+    <section className="relative py-20 bg-gradient-to-r from-novae-purple to-novae-green">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center text-white">
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1 text-sm font-medium mb-6">

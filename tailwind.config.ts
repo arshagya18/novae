@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,15 +63,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				novae: {
-					purple: "#6B46C1", // Dark purple
+					purple: "#6C5DD3", // Updated to match requested purple
 					blue: "#3F83F8", // Light blue
 					teal: "#0D9488", // Teal
-					green: "#00C48C", // Added green color
+					green: "#00C48C", // Green
 					light: "#f8fafc",
 					gradient: {
-						from: "#6B46C1", // Purple from logo
+						from: "#6C5DD3", // Updated purple from logo
 						mid: "#3F83F8", // Blue from middle of logo
-						to: "#10B981", // Green from end of logo
+						to: "#00C48C", // Green from end of logo
 					}
 				}
 			},

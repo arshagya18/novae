@@ -16,7 +16,7 @@ const Contact = () => {
       <Navbar />
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-novae-purple via-novae-blue to-novae-teal overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-r from-novae-purple to-novae-green overflow-hidden">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center text-white">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>

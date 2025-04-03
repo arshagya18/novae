@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,15 +64,24 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				novae: {
-					purple: "#6C5DD3", // Updated to match requested purple
-					blue: "#6C5DD3", // Light blue
-					teal: "#0D9488", // Teal
-					green: "#00C48C", // Green
+					purple: "#6C5DD3", 
+					blue: "#3f83f8",
+					teal: "#0D9488", 
+					green: "#00C48C", 
+					dark: "#121212",
+					charcoal: "#1E1E1E",
+					darkgray: "#2A2A2A",
 					light: "#f8fafc",
+					neon: {
+						purple: "#a78bfa",
+						blue: "#60a5fa",
+						teal: "#2dd4bf",
+						pink: "#f472b6",
+					},
 					gradient: {
-						from: "#6C5DD3", // Updated purple from logo
-						mid: "#3F83F8", // Blue from middle of logo
-						to: "#00C48C", // Green from end of logo
+						from: "#6C5DD3",
+						mid: "#3F83F8",
+						to: "#00C48C",
 					}
 				}
 			},
@@ -156,6 +166,19 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						filter: 'drop-shadow(0 0 2px currentColor)'
+					},
+					'50%': {
+						filter: 'drop-shadow(0 0 8px currentColor)'
+					}
+				},
+				'gradient-move': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
 				}
 			},
 			animation: {
@@ -166,11 +189,15 @@ export default {
 				'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
 				'scale-in': 'scale-in 0.4s ease-out forwards',
 				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'glow': 'glow-pulse 3s ease-in-out infinite',
+				'gradient-shift': 'gradient-move 8s ease infinite'
 			},
 			backgroundImage: {
 				'gradient-primary': 'linear-gradient(90deg, var(--tw-gradient-stops))',
 				'main-gradient': 'linear-gradient(90deg, #6B46C1, #3F83F8, #10B981)',
+				'glow-gradient': 'linear-gradient(90deg, #6C5DD3, #0D9488, #00C48C)',
+				'dark-gradient': 'linear-gradient(to bottom, #121212, #1E1E1E)'
 			},
 		}
 	},

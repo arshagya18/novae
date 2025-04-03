@@ -39,32 +39,27 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-3 bg-white shadow-md backdrop-blur-md'
-          : 'py-5 bg-white'
+          ? 'py-3 neo-glass backdrop-blur-xl border-b border-white/10'
+          : 'py-5 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo with new gradient style */}
+          {/* Logo */}
           <Link 
             to="/" 
             className={`text-2xl font-bold flex items-center transition-all duration-500 ${
               isScrolled ? 'transform scale-90' : ''
             }`}
           >
-            {isScrolled ? (
-              <span className="bg-clip-text text-transparent bg-main-gradient font-display tracking-tight text-3xl">
-                n
-              </span>
-            ) : (
-              <span className="bg-clip-text text-transparent bg-main-gradient font-display tracking-tight text-3xl">
-                novae
-                <span className="text-novae-blue">.</span>
-              </span>
-            )}
+            <img 
+              src="/lovable-uploads/78bc4279-7644-409c-a546-9f0eec85df5f.png" 
+              alt="Novae Logo" 
+              className="h-10" 
+            />
           </Link>
 
-          {/* Desktop Navigation - always visible */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -72,8 +67,8 @@ export const Navbar = () => {
                 to={link.path}
                 className={`link-underline font-medium transition-colors ${
                   location.pathname === link.path
-                    ? 'text-novae-blue'
-                    : 'text-novae-purple hover:text-novae-blue'
+                    ? 'text-white'
+                    : 'text-white/70 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -81,7 +76,7 @@ export const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="px-5 py-2 bg-gradient-to-r from-novae-purple to-novae-teal text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg"
+              className="px-5 py-2 bg-gradient-to-r from-novae-purple to-novae-green text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg animate-glow"
             >
               Get in Touch
             </Link>
@@ -89,7 +84,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-novae-purple focus:outline-none"
+            className="md:hidden text-white focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -99,7 +94,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-4 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 w-full neo-glass backdrop-blur-xl border-b border-white/10 py-4 px-4 animate-fade-in">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link
@@ -107,8 +102,8 @@ export const Navbar = () => {
                 to={link.path}
                 className={`py-2 px-4 rounded-md transition-colors ${
                   location.pathname === link.path
-                    ? 'bg-novae-purple/10 text-novae-purple'
-                    : 'text-novae-purple hover:bg-gray-100'
+                    ? 'bg-novae-purple/20 text-white'
+                    : 'text-white/70 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {link.name}
@@ -116,7 +111,7 @@ export const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="py-2 px-4 bg-gradient-to-r from-novae-purple to-novae-teal text-white rounded-md text-center"
+              className="py-2 px-4 bg-gradient-to-r from-novae-purple to-novae-green text-white rounded-md text-center"
             >
               Get in Touch
             </Link>

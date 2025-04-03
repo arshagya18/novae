@@ -2,10 +2,13 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Welcome from '@/components/Welcome';
 import Features from '@/components/Features';
-import Stats from '@/components/Stats';
-import Solutions from '@/components/Solutions';
-import ContactForm from '@/components/ContactForm';
+import SolutionSection from '@/components/SolutionSection';
+import Markets from '@/components/Markets';
+import DriverCTA from '@/components/DriverCTA';
+import BlogSection from '@/components/BlogSection';
+import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -14,40 +17,39 @@ const Index = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Initialize scroll animations
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollElements = document.querySelectorAll('.parallax');
+      
+      scrollElements.forEach((element) => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const scrollPosition = window.innerHeight;
+        
+        if (elementPosition < scrollPosition) {
+          const speed = (element as HTMLElement).dataset.speed || '0.1';
+          const yPos = (scrollPosition - elementPosition) * parseFloat(speed);
+          (element as HTMLElement).style.setProperty('--parallax-y', `${-yPos}px`);
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black">
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <Welcome />
         <Features />
-        <Stats />
-        <Solutions />
-        
-        {/* Contact section */}
-        <section className="py-20 bg-white relative">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <div className="bg-novae-purple/10 text-novae-purple text-sm font-medium px-4 py-1 rounded-full inline-block mb-4">
-                Get Started
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-novae-purple mb-4">
-                Ready to Transform Your Advertising?
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Contact us today to discuss how our GPS-enabled LED taxi-top advertising 
-                can help your brand reach its target audience effectively.
-              </p>
-            </div>
-            
-            <div className="max-w-2xl mx-auto">
-              <ContactForm />
-            </div>
-          </div>
-          
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-novae-purple/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-novae-teal/5 rounded-full blur-3xl -z-10"></div>
-        </section>
+        <SolutionSection />
+        <Markets />
+        <DriverCTA />
+        <BlogSection />
+        <Newsletter />
       </main>
       <Footer />
     </div>

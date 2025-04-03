@@ -4,24 +4,24 @@ import { MapPin, BarChart3, Zap, Smartphone } from 'lucide-react';
 
 const features = [
   {
-    icon: <MapPin className="h-8 w-8 text-novae-teal" />,
-    title: 'GPS Precision Targeting',
-    description: 'Display your ads exactly where your audience is, with location-based triggering for maximum relevance.'
+    icon: <MapPin className="h-8 w-8" />,
+    title: 'GPS Precision',
+    description: 'Location-based triggering for maximum relevance'
   },
   {
-    icon: <BarChart3 className="h-8 w-8 text-novae-teal" />,
+    icon: <BarChart3 className="h-8 w-8" />,
     title: 'Real-Time Analytics',
-    description: 'Measure impressions, engagement, and effectiveness with comprehensive reporting tools.'
+    description: 'Measure impressions and effectiveness instantly'
   },
   {
-    icon: <Zap className="h-8 w-8 text-novae-teal" />,
+    icon: <Zap className="h-8 w-8" />,
     title: 'Dynamic Content',
-    description: 'Update your advertisements in real-time based on time, location, weather, or current events.'
+    description: 'Update ads based on time, location, or events'
   },
   {
-    icon: <Smartphone className="h-8 w-8 text-novae-teal" />,
-    title: 'Interactive Experience',
-    description: 'Create engaging, interactive campaigns that connect with your audience on a deeper level.'
+    icon: <Smartphone className="h-8 w-8" />,
+    title: 'Mobile Integration',
+    description: 'Connect with audiences across platforms'
   }
 ];
 
@@ -67,17 +67,17 @@ const Features = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 bg-white relative">
-      <div className="container mx-auto">
+    <section ref={sectionRef} className="section bg-white text-black relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="bg-novae-teal/10 text-novae-teal text-sm font-medium px-4 py-1 rounded-full inline-block mb-4">
-            Why Choose Novae
+          <div className="inline-block bg-novae-coral/10 text-novae-coral text-sm font-medium px-4 py-1 rounded-full mb-4">
+            HOW IT WORKS
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-novae-blue mb-4">
-            Smart Technology for Smarter Advertising
+          <h2 className="text-black mb-4">
+            WHY NOVAE
           </h2>
-          <p className="text-novae-gray text-lg">
-            Our cutting-edge LED taxi-top displays combine precision targeting with dynamic content delivery, 
+          <p className="text-black/70">
+            Our cutting-edge taxi-top displays combine precision targeting with dynamic content delivery, 
             creating a powerful advertising medium that reaches audiences where they are.
           </p>
         </div>
@@ -86,23 +86,23 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 
+              className={`bg-white border border-gray-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 text-center 
                 ${visibleItems.includes(index) ? 'animate-scale-in' : 'opacity-0'}`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="bg-novae-teal/10 p-3 rounded-lg inline-block mb-4">
+              <div className="bg-coral-gradient p-5 rounded-full inline-flex items-center justify-center mb-6 text-white">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-novae-blue mb-2">{feature.title}</h3>
-              <p className="text-novae-gray">{feature.description}</p>
+              <h3 className="text-xl font-bold text-black mb-3">{feature.title}</h3>
+              <p className="text-black/70">{feature.description}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Background decoration */}
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-64 h-64 bg-novae-teal/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-novae-blue/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-64 h-64 bg-novae-coral/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-novae-purple/5 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };

@@ -1,12 +1,10 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Change navbar background on scroll
   useEffect(() => {
@@ -22,25 +20,38 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
+  // Close menu when clicking outside
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+    const handleClickOutside = (e: MouseEvent) => {
+      if (isMenuOpen && !(e.target as Element).closest('.mobile-menu') && 
+          !(e.target as Element).closest('.hamburger')) {
+        setIsMenuOpen(false);
+      }
+    };
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Solutions', path: '/solutions' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
-  ];
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMenuOpen]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'py-3 neo-glass backdrop-blur-xl border-b border-white/10'
-          : 'py-5 bg-transparent'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled || isMenuOpen
+          ? 'py-4 backdrop-blur-xl bg-black/80 border-b border-white/10'
+          : 'py-6 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -48,76 +59,104 @@ export const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className={`text-2xl font-bold flex items-center transition-all duration-500 ${
-              isScrolled ? 'transform scale-90' : ''
-            }`}
+            className="z-50"
+            onClick={() => setIsMenuOpen(false)}
           >
             <img 
               src="/lovable-uploads/78bc4279-7644-409c-a546-9f0eec85df5f.png" 
               alt="Novae Logo" 
-              className="h-10" 
+              className="h-8 md:h-10" 
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`link-underline font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-white'
-                    : 'text-white/70 hover:text-white'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="px-5 py-2 bg-gradient-to-r from-novae-purple to-novae-green text-white rounded-md transition-transform hover:scale-105 hover:shadow-lg animate-glow"
-            >
-              Get in Touch
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
+          {/* Hamburger Menu Button */}
           <button
-            className="md:hidden text-white focus:outline-none"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`hamburger z-50 flex flex-col items-center justify-center w-8 h-8 space-y-1.5 focus:outline-none ${isMenuOpen ? 'menu-open' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full neo-glass backdrop-blur-xl border-b border-white/10 py-4 px-4 animate-fade-in">
-          <div className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`py-2 px-4 rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? 'bg-novae-purple/20 text-white'
-                    : 'text-white/70 hover:text-white hover:bg-white/5'
-                }`}
+      {/* Fullscreen Menu Overlay */}
+      <div 
+        className={`fixed inset-0 bg-black transition-all duration-500 ${
+          isMenuOpen 
+            ? 'opacity-100 visible' 
+            : 'opacity-0 invisible pointer-events-none'
+        }`}
+      >
+        <div className="container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="mobile-menu w-full max-w-lg stagger-fade-in">
+            <div className="text-center mb-12">
+              <p className="text-novae-coral uppercase tracking-widest text-sm mb-2">NAVIGATION</p>
+              <div className="w-12 h-1 bg-coral-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <ul className="flex flex-col space-y-6 text-center">
+              <li>
+                <Link 
+                  to="/"
+                  className="text-3xl font-bold hover:text-novae-coral transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  HOME
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/about"
+                  className="text-3xl font-bold hover:text-novae-coral transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/solutions"
+                  className="text-3xl font-bold hover:text-novae-coral transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  SOLUTIONS
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/blog"
+                  className="text-3xl font-bold hover:text-novae-coral transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  BLOG
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/contact"
+                  className="text-3xl font-bold hover:text-novae-coral transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  CONTACT
+                </Link>
+              </li>
+            </ul>
+            
+            <div className="mt-16">
+              <Link 
+                to="/contact" 
+                className="btn btn-primary inline-block"
+                onClick={() => setIsMenuOpen(false)}
               >
-                {link.name}
+                Get in Touch
               </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="py-2 px-4 bg-gradient-to-r from-novae-purple to-novae-green text-white rounded-md text-center"
-            >
-              Get in Touch
-            </Link>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

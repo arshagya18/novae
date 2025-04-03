@@ -53,41 +53,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
 				novae: {
-					purple: "#6C5DD3", 
-					blue: "#3f83f8",
-					teal: "#0D9488", 
-					green: "#00C48C", 
-					dark: "#121212",
-					charcoal: "#1E1E1E",
-					darkgray: "#2A2A2A",
-					light: "#f8fafc",
-					neon: {
-						purple: "#a78bfa",
-						blue: "#60a5fa",
-						teal: "#2dd4bf",
-						pink: "#f472b6",
-					},
-					gradient: {
-						from: "#6C5DD3",
-						mid: "#3F83F8",
-						to: "#00C48C",
-					}
+					coral: "#FC605F",
+					peach: "#F9AB94",
+					purple: "#996EAB",
+					dark: "#000000",
+					light: "#FFFFFF"
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Inter', 'sans-serif']
+				sans: ['Poppins', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -114,7 +90,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -128,7 +104,7 @@ export default {
 					},
 					'100%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					}
 				},
 				'fade-in-right': {
@@ -184,7 +160,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out forwards',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
 				'fade-out': 'fade-out 0.6s ease-out forwards',
 				'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
 				'scale-in': 'scale-in 0.4s ease-out forwards',
@@ -194,10 +170,9 @@ export default {
 				'gradient-shift': 'gradient-move 8s ease infinite'
 			},
 			backgroundImage: {
-				'gradient-primary': 'linear-gradient(90deg, var(--tw-gradient-stops))',
-				'main-gradient': 'linear-gradient(90deg, #6B46C1, #3F83F8, #10B981)',
-				'glow-gradient': 'linear-gradient(90deg, #6C5DD3, #0D9488, #00C48C)',
-				'dark-gradient': 'linear-gradient(to bottom, #121212, #1E1E1E)'
+				'gradient-primary': 'linear-gradient(45deg, var(--tw-gradient-stops))',
+				'coral-gradient': 'linear-gradient(45deg, #FC605F, #F9AB94)',
+				'dark-gradient': 'linear-gradient(to bottom, #000000, #121212)'
 			},
 		}
 	},

@@ -9,13 +9,13 @@ const Footer = () => {
     <footer className="bg-black text-white relative">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo and About */}
+          {/* Logo and About - increased logo size */}
           <div>
             <Link to="/" className="inline-block mb-6">
               <img 
                 src="/lovable-uploads/78bc4279-7644-409c-a546-9f0eec85df5f.png" 
                 alt="Novae Logo" 
-                className="h-8" 
+                className="h-12" 
               />
             </Link>
             <p className="text-white/70 mb-6">

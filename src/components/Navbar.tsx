@@ -56,7 +56,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - increased size */}
           <Link 
             to="/" 
             className="z-50"
@@ -65,7 +65,7 @@ export const Navbar = () => {
             <img 
               src="/lovable-uploads/78bc4279-7644-409c-a546-9f0eec85df5f.png" 
               alt="Novae Logo" 
-              className="h-8 md:h-10" 
+              className="h-12 md:h-16" 
             />
           </Link>
 

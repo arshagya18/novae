@@ -22,7 +22,7 @@ const Newsletter = () => {
             STAY UPDATED
           </h2>
           <p className="text-black/70 mb-8">
-            Subscribe to our newsletter for the latest news, industry insights, and exclusive Novae updates.
+            Subscribe to our newsletter for the latest news, industry insights, and exclusive Novae updates from across India.
           </p>
           
           {isSubmitted ? (

@@ -2,9 +2,9 @@
 import { useRef, useState, useEffect } from 'react';
 
 const markets = [
-  'New York', 'Los Angeles', 'Chicago', 'San Francisco', 'Miami',
-  'Seattle', 'Boston', 'Washington DC', 'Dallas', 'Houston',
-  'Atlanta', 'Denver', 'Las Vegas', 'Philadelphia', 'Phoenix'
+  'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai',
+  'Kolkata', 'Pune', 'Ahmedabad', 'Jaipur', 'Lucknow',
+  'Chandigarh', 'Kochi', 'Guwahati', 'Bhubaneswar', 'Indore'
 ];
 
 const Markets = () => {
@@ -40,10 +40,10 @@ const Markets = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block bg-novae-coral/10 text-novae-coral text-sm font-medium px-4 py-1 rounded-full mb-4">
-            COVERAGE
+            NETWORK
           </div>
           <h2 className="text-white mb-8">
-            NOVAE MARKETS
+            NOVAE PRESENCE
           </h2>
           
           <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 ${isVisible ? 'stagger-fade-in' : 'opacity-0'}`}>
@@ -59,7 +59,7 @@ const Markets = () => {
           
           <div className="mt-12">
             <p className="text-white/70 inline-block">
-              And rapidly expanding to more cities across North America
+              And rapidly expanding to more cities across India
             </p>
           </div>
         </div>
